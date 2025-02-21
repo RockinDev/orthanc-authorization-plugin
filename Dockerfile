@@ -21,4 +21,9 @@ RUN mkdir -p /root/orthanc-authorization/build
 
 WORKDIR /root/orthanc-authorization/build
 
-RUN cmake -DSTATIC_BUILD=ON -DCMAKE_BUILD_TYPE=Release .. && make
+# Configure and build plugin
+RUN cmake \
+    -DSTATIC_BUILD=ON \
+    -DCMAKE_BUILD_TYPE=Release \
+    .. && \
+    make
